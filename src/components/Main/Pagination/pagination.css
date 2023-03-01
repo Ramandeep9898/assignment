@@ -1,0 +1,10 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.pagination-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}

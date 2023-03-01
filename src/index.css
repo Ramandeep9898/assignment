@@ -1,0 +1,26 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  max-width: 100vw;
+}
+@font-face {
+  font-family: galanogrotesque regular;
+  font-weight: 400;
+  src: url("./fonts/galanogrotesque-regular.otf");
+}
+
+@font-face {
+  font-family: galanogrotesque medium;
+  src: url("./fonts/galanogrotesque-medium.otf");
+}
+
+@font-face {
+  font-family: galanogrotesque semibold;
+  src: url("./fonts/galanogrotesque-semibold.otf");
+}
+
+@import url(./util/index.css);

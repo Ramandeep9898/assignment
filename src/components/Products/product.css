@@ -1,0 +1,24 @@
+.product-conatiner {
+  padding: 80px 160px;
+}
+.product-card {
+  max-width: 352px;
+  min-width: 352px;
+  cursor: pointer;
+}
+.product-card-heading {
+  font-family: galanogrotesque medium;
+  color: var(--heading);
+  font-size: 20px;
+  font-weight: 400;
+}
+.product-card-abt {
+  font-family: galanogrotesque regular;
+  font-size: 16px;
+  color: var(--grey);
+  font-weight: 400;
+  line-height: 24px;
+}
+.wrap {
+  flex-wrap: wrap;
+}

@@ -1,0 +1,54 @@
+.btn {
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: galanogrotesque regular;
+  font-size: 400;
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 26px;
+}
+.btn-ghost {
+  color: var(--primary);
+  background-color: var(--white);
+  font-family: galanogrotesque medium;
+}
+.btn-link {
+  padding: 0px;
+  background-color: transparent;
+  color: var(--white);
+}
+.btn-primary {
+  font-family: galanogrotesque medium;
+  background-color: var(--primary);
+  color: var(--white);
+}
+.btn-outline {
+  font-family: galanogrotesque medium;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--white);
+  font-size: 14px;
+  line-height: 20px;
+}
+.btn-pagination {
+  color: var(--primary);
+
+  font-size: 14px;
+  line-height: 20px;
+  font-family: galanogrotesque regular;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn-pagination-active {
+  padding: 2px 9px;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: galanogrotesque regular;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary);
+  cursor: pointer;
+  color: var(--white);
+}

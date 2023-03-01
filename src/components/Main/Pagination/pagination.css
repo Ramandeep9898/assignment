@@ -8,3 +8,10 @@
   justify-content: center;
   gap: 15px;
 }
+.dots {
+  cursor: pointer;
+  color: var(--primary);
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+}

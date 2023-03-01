@@ -52,3 +52,6 @@
   cursor: pointer;
   color: var(--white);
 }
+.test {
+  border: 2px solid red;
+}

@@ -12,6 +12,10 @@ export const Main = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(18);
 
+  const [pageNumberLimit, setpageNumberLimit] = useState(3);
+  const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(3);
+  const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
+
   const clickHandler = () => {
     setInput("");
   };
@@ -35,12 +39,28 @@ export const Main = () => {
   const pagination = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  let dots = " ...";
 
   const nextPage = () => {
     setCurrentPage((prev) =>
       indexOfLastPost <= filterSolgon.length ? prev + 1 : prev
     );
+  };
+
+  const handlePrevbtn = () => {
+    setCurrentPage(currentPage - 1);
+
+    if ((currentPage - 1) % pageNumberLimit == 0) {
+      setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
+      setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+    }
+  };
+  const handleNextbtn = () => {
+    setCurrentPage(currentPage + 1);
+
+    if (currentPage + 1 > maxPageNumberLimit) {
+      setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
+      setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+    }
   };
 
   return (
@@ -95,6 +115,10 @@ export const Main = () => {
               postPerPage={postPerPage}
               currentPage={currentPage}
               nextPage={nextPage}
+              handlePrevbtn={handlePrevbtn}
+              handleNextbtn={handleNextbtn}
+              minPageNumberLimit={minPageNumberLimit}
+              maxPageNumberLimit={maxPageNumberLimit}
             />
           </div>
         </div>

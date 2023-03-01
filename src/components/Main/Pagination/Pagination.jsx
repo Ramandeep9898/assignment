@@ -7,6 +7,10 @@ export const Pagination = ({
   postPerPage,
   currentPage,
   nextPage,
+  handleNextbtn,
+  handlePrevbtn,
+  minPageNumberLimit,
+  maxPageNumberLimit,
 }) => {
   const pageNumber = [];
 
@@ -14,26 +18,52 @@ export const Pagination = ({
     pageNumber.push(i);
   }
 
+  let pageIncrementBtn = null;
+  if (pageNumber.length > maxPageNumberLimit) {
+    pageIncrementBtn = (
+      <button onClick={handleNextbtn} className="dots">
+        ...
+      </button>
+    );
+  }
+
+  let pageDecrementBtn = null;
+  if (minPageNumberLimit >= 1) {
+    pageDecrementBtn = (
+      <button onClick={handlePrevbtn} className="dots">
+        ...
+      </button>
+    );
+  }
+
   return (
     <>
       <div className="flex pagination">
         <div className=""></div>
         <div className="pagination-btn-container ">
-          {pageNumber.map((number, i) => {
-            return (
-              <button
-                key={i}
-                className={
-                  number == currentPage
-                    ? "btn-pagination-active"
-                    : "btn-pagination"
-                }
-                onClick={() => pagination(number)}
-              >
-                {number}
-              </button>
-            );
+          {pageDecrementBtn}
+          {pageNumber.map((pageNumber) => {
+            if (
+              pageNumber < maxPageNumberLimit + 1 &&
+              pageNumber > minPageNumberLimit
+            ) {
+              return (
+                <button
+                  className={
+                    currentPage === pageNumber
+                      ? "btn-pagination-active"
+                      : "btn-pagination"
+                  }
+                  onClick={() => pagination(pageNumber)}
+                >
+                  <span>{pageNumber}</span>
+                </button>
+              );
+            } else {
+              return null;
+            }
           })}
+          {pageIncrementBtn}
         </div>
         <div className="flex">
           <button className="btn-pagination" onClick={nextPage}>
